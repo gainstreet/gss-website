@@ -4,13 +4,13 @@
 <script>document.documentElement.classList.add('js');</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Gain Street Strategy</title>
-<meta name="description" content="Meet the team behind Gain Street Strategy — a marketing agency built specifically for roofing and construction contractors in Canada and the US.">
+<title>Gain Street CRM — Gain Street Strategy</title>
+<meta name="description" content="Gain Street CRM: the simple, mobile-first CRM built for roofing and construction contractors — included as part of your GSS partnership, no extra subscription.">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-<meta property="og:title" content="About — Gain Street Strategy">
-<meta property="og:description" content="Meet the team behind Gain Street Strategy — a marketing agency built for roofing and construction contractors.">
+<meta property="og:title" content="Gain Street CRM — Gain Street Strategy">
+<meta property="og:description" content="The CRM built for how roofing and construction crews actually work — included with your GSS partnership.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="images/tom-headshot.jpeg">
+<meta property="og:image" content="images/services-line-image.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
@@ -192,22 +192,22 @@ footer .logo .street{color:#fff}
 
 /* ================ HERO (dark) ================ */
 .hero-dark{
-  background:var(--navy) url('images/hero2.webp') center/cover no-repeat;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(255,183,3,0.14),transparent 45%),
+    radial-gradient(circle at 88% 78%,rgba(170,0,51,0.14),transparent 45%),
+    var(--navy);
   color:#fff;
   padding:96px 0 112px;
   position:relative;overflow:hidden;
 }
-.hero-dark::before{
-  content:"";position:absolute;inset:0;
-  background:
-    radial-gradient(circle at 20% 30%,rgba(255,183,3,0.06),transparent 40%),
-    radial-gradient(circle at 80% 70%,rgba(170,0,51,0.05),transparent 40%);
-  pointer-events:none;
+.hero-dark .container{position:relative;z-index:1}
+.hero-watermark{
+  position:absolute;top:50%;right:-100px;transform:translateY(-50%);
+  width:440px;height:440px;opacity:0.05;pointer-events:none;z-index:0;
 }
-.hero-dark .container{position:relative}
-.hero-dark h1{color:#fff;max-width:880px;margin-bottom:24px}
-.hero-dark .lede{color:rgba(255,255,255,0.85);max-width:680px;margin-bottom:40px}
-.hero-dark .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.hero-dark h1{color:#fff;max-width:880px;margin:0 auto 24px}
+.hero-dark .lede{color:rgba(255,255,255,0.85);max-width:680px;margin:0 auto 40px}
+.hero-dark .hero-actions{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
 
 /* light hero variant for contact */
 .hero-light{
@@ -216,6 +216,21 @@ footer .logo .street{color:#fff}
 }
 .hero-light h1{margin-bottom:16px}
 .hero-light .lede{max-width:640px;color:var(--text)}
+
+/* ================ INTRO STRIP ================ */
+.intro-strip{background:#e8e8e8;overflow:hidden}
+.intro-strip-inner{
+  display:flex;align-items:center;gap:48px;
+  padding:0;
+}
+.intro-strip-img{
+  flex-shrink:0;width:44%;max-width:520px;height:auto;
+  margin-left:-24px;
+}
+.intro-strip-text{
+  flex:1;color:#3E5C7A;font-family:'Inter',sans-serif;
+  font-size:17px;font-weight:600;line-height:1.5;
+}
 
 /* ================ SOCIAL PROOF BAR ================ */
 .proof-bar{background:#e8e8e8;padding:32px 0 16px;border-bottom:1px solid var(--line)}
@@ -268,7 +283,7 @@ footer .logo .street{color:#fff}
 .service-card .icon-box{
   width:56px;height:56px;border-radius:8px;background:var(--navy);
   display:flex;align-items:center;justify-content:center;
-  margin-bottom:20px;color:var(--navy);
+  margin-bottom:20px;color:var(--amber);
 }
 .service-card .icon-box svg{width:26px;height:26px}
 .service-card .kicker{
@@ -279,85 +294,30 @@ footer .logo .street{color:#fff}
 .service-card p{flex:1;margin-bottom:20px;color:var(--text);font-size:15px}
 .service-card .link-amber{margin-top:auto}
 
-/* ================ WORK SAMPLES ================ */
-.work-samples{background:#fff;padding:96px 0;border-top:1px solid var(--line);position:relative}
-.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-radius:8px;overflow:hidden}
-.work-grid-wrap{position:relative}
-.work-nav{
-  position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;
-  background:rgba(0,0,0,0.35);color:#fff;display:flex;align-items:center;justify-content:center;
-  font-size:16px;z-index:2;
-}
-.work-nav.prev{left:12px}
-.work-nav.next{right:12px}
-.work-card{
-  background:#fff;overflow:hidden;transition:.2s;display:flex;flex-direction:column;position:relative;
-}
-.work-card:hover{transform:translateY(-2px)}
-.work-image{
-  aspect-ratio:4/3;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
-}
-.work-image img{width:100%;height:100%;object-fit:cover;display:block}
-.work-image .ph-label{
-  position:absolute;inset:auto 16px 16px 16px;
-  background:rgba(0,0,0,0.55);color:#fff;
-  font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  padding:8px 12px;border-radius:4px;backdrop-filter:blur(4px);
-}
-/* themed placeholder backgrounds (so the layout reads even without real images) */
-.work-image.ph-uproof{
-  background:
-    radial-gradient(circle at 70% 30%,rgba(255,90,30,0.15),transparent 50%),
-    linear-gradient(135deg,#1f1f1f 0%,#2d2d2d 100%);
-  color:#FF5A1E;
-}
-.work-image.ph-uproof .ph-mark{
-  font-family:'Inter',sans-serif;font-weight:900;font-size:48px;letter-spacing:-0.03em;
-  color:#bdbdbd;opacity:0.45;text-transform:uppercase;
-}
-.work-image.ph-uproof .ph-mark span{color:#FF5A1E;opacity:1}
-.work-image.ph-carefree{
-  background:
-    radial-gradient(circle at 30% 30%,rgba(125,200,250,0.25),transparent 60%),
-    linear-gradient(135deg,#0d2b4a 0%,#1c5976 100%);
-  color:#7DC8FA;
-}
-.work-image.ph-carefree .ph-mark{
-  font-family:'Inter',sans-serif;font-weight:700;font-size:22px;
-  color:#ffffff;letter-spacing:0.01em;
-  background:rgba(28,89,118,0.7);padding:14px 22px;border-radius:6px;
-  border:1px solid rgba(255,255,255,0.15);
-}
-.work-meta{padding:24px 28px}
-.work-tag{
-  display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--amber);background:var(--navy);padding:4px 10px;border-radius:4px;margin-bottom:12px;
-}
-.work-meta h3{font-size:20px;margin-bottom:6px}
-.work-meta .work-type{font-size:14px;color:var(--muted)}
-.work-cta-row{margin-top:48px;text-align:center}
-.work-cta-row a{
-  color:var(--navy);font-family:'Inter',sans-serif;font-weight:700;font-size:15px;
-  border-bottom:2px solid var(--amber);padding-bottom:2px;
-}
-
 /* ================ CRM SPOTLIGHT ================ */
-.crm-spotlight{background:var(--amber);color:var(--navy);padding:96px 0}
-.crm-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.crm-spotlight{background:var(--amber);color:var(--navy);padding:96px 0;position:relative;overflow:hidden}
+.crm-spotlight::before{
+  content:"";
+  position:absolute;inset:0;
+  background:url('images/icons-background-crm.svg') repeat;
+  background-size:260px auto;
+  filter:brightness(0) invert(1);opacity:0.15;pointer-events:none;z-index:0;
+}
+.crm-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
 .crm-grid .eyebrow{background:var(--navy);color:var(--amber)}
-.crm-grid h2{color:var(--navy);margin-bottom:20px}
+.crm-grid h2{color:#fff;font-size:clamp(34px,4vw,48px);margin-bottom:20px}
 .crm-grid p{color:var(--navy);font-size:18px;margin-bottom:24px;max-width:520px}
 .crm-grid .crm-cta{
-  color:var(--navy);font-weight:700;font-size:16px;
-  border-bottom:2px solid var(--navy);padding-bottom:2px;
+  color:var(--navy);font-family:'Lora',Georgia,serif;font-weight:700;font-size:16px;
+  border-bottom:2px solid #fff;padding-bottom:2px;
   display:inline-flex;gap:8px;align-items:center;
 }
 .crm-mock{
   background:#fff;border-radius:12px;padding:24px;
   box-shadow:0 24px 48px rgba(26,58,92,0.16);
 }
+.crm-mock-logo{display:flex;justify-content:center;margin-bottom:16px}
+.crm-mock-logo img{height:28px;width:auto}
 .crm-mock-header{
   display:flex;align-items:center;justify-content:space-between;
   padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px;
@@ -376,6 +336,43 @@ footer .logo .street{color:#fff}
 }
 .crm-deal strong{color:var(--navy);display:block;font-size:12px;margin-bottom:2px}
 .crm-deal .amt{color:var(--amber);font-weight:700;background:var(--navy);padding:2px 6px;border-radius:3px;font-size:10px;display:inline-block;margin-top:4px}
+
+/* ================ CRM FUNNEL GRAPHIC ================ */
+.funnel{display:flex;flex-direction:column;align-items:center;gap:4px}
+.funnel-step{
+  width:100%;display:flex;align-items:center;gap:14px;
+  background:#F5F6F8;border:1px solid var(--line);border-radius:8px;
+  padding:14px 18px;
+}
+.funnel-step-2{width:92%}
+.funnel-step-3{width:84%}
+.funnel-step-4{width:76%}
+.funnel-step-final{width:68%;background:var(--navy);border-color:var(--navy)}
+.funnel-step-final .funnel-text strong{color:#fff}
+.funnel-step-final .funnel-text span{color:rgba(255,255,255,0.7)}
+.funnel-icon{
+  width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--amber);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;
+}
+.funnel-step-final .funnel-icon{background:var(--amber);color:var(--navy)}
+.funnel-text{display:flex;flex-direction:column;gap:2px;text-align:left}
+.funnel-text strong{font-size:14px;color:var(--navy);font-family:'Inter',sans-serif}
+.funnel-text span{font-size:12px;color:var(--muted)}
+.funnel-arrow{color:var(--muted);font-size:13px;line-height:1;padding:2px 0}
+
+/* ================ CRM CHECKLIST (standout style) ================ */
+.crm-checklist-detailed{list-style:none;margin:24px 0;display:grid;gap:10px}
+.crm-checklist-detailed li{
+  display:flex;align-items:center;gap:10px;
+  color:var(--navy);font-size:16px;
+}
+.crm-checklist-detailed .chk-round{
+  width:24px;height:24px;border-radius:50%;flex-shrink:0;
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:900;
+  box-shadow:0 2px 6px rgba(26,58,92,0.25);
+}
 
 /* ================ TESTIMONIALS ================ */
 .testimonials{background:#F5F6F8;padding:96px 0}
@@ -439,143 +436,33 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
 }
 .social-icons a:hover{color:#fff}
 
-/* ================ SERVICES PAGE — BUCKETS ================ */
+/* ================ SERVICES PAGE — BUCKETS (shared) ================ */
 .bucket{padding:80px 0;border-bottom:1px solid var(--line)}
 .bucket:nth-child(even){background:var(--cream)}
-.bucket-head{display:grid;grid-template-columns:1fr 1.5fr;gap:64px;margin-bottom:40px;align-items:start}
+.bucket-head{max-width:700px;margin-bottom:40px}
 .bucket-num{
-  font-size:13px;font-weight:700;color:var(--amber);
-  letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;
+  display:inline-block;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--navy);background:var(--amber);
+  padding:6px 14px;border-radius:4px;margin-bottom:16px;
 }
-.bucket-head h2{margin-bottom:0}
-.bucket-head .body p{font-size:18px;line-height:1.6}
+.bucket-head h2{margin-bottom:16px;max-width:420px}
+.bucket-head p{font-size:18px;line-height:1.6;color:var(--text);max-width:480px}
 .bucket-services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .bucket-service{
-  background:#fff;padding:28px;border-radius:8px;
+  background:#fff;padding:44px 28px;border-radius:8px;
   border:1px solid var(--line);
 }
+.bucket-service .b-icon{
+  width:44px;height:44px;margin-bottom:18px;color:var(--amber);
+}
+.bucket-service .b-icon svg{width:100%;height:100%;stroke-width:1.25}
 .bucket-service h4{
-  color:var(--navy);font-size:18px;font-weight:700;margin-bottom:10px;
-  display:flex;align-items:center;gap:10px;
+  color:var(--navy);font-size:18px;font-weight:700;margin-bottom:14px;
+  padding-bottom:14px;border-bottom:1px solid var(--line);
 }
-.bucket-service h4::before{
-  content:"";width:8px;height:8px;background:var(--amber);border-radius:50%;flex-shrink:0;
-}
-.bucket-service p{font-size:15px;color:var(--text);line-height:1.55}
-
-/* ================ ABOUT PAGE ================ */
-.story{padding:96px 0;background:#fff}
-.story-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:start}
-.story-photo{
-  aspect-ratio:4/5;background:var(--navy);border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,0.5);font-size:14px;font-weight:600;
-  position:relative;overflow:hidden;
-}
-.story-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.story-body h2{margin-bottom:20px}
-.story-body p{font-size:17px;line-height:1.7;color:var(--text);margin-bottom:18px}
-.differentiators{padding:96px 0;background:var(--cream)}
-.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.diff-card{
-  background:#fff;padding:36px 28px;border-radius:8px;
-  border-left:4px solid var(--amber);
-}
-.diff-card .icon-box{
-  width:56px;height:56px;border-radius:8px;background:var(--amber);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:20px;
-}
-.diff-card .icon-box svg{width:26px;height:26px}
-.diff-card .diff-num{font-family:'Inter',sans-serif;font-weight:800;color:var(--amber);font-size:14px;letter-spacing:0.1em;margin-bottom:10px;display:block}
-.diff-card h3{margin-bottom:12px;font-size:22px}
-.diff-card p{font-size:15px;color:var(--text);line-height:1.6}
-
-/* ================ CONTACT PAGE ================ */
-.contact-section{padding:64px 0;background:#fff}
-.contact-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
-.form-card{
-  background:var(--cream);padding:40px;border-radius:8px;
-}
-.form-card h3{margin-bottom:8px}
-.form-card .form-note{font-size:14px;color:var(--muted);margin-bottom:24px}
-.form-row{margin-bottom:18px}
-.form-row.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-row label{
-  display:block;font-size:13px;font-weight:600;color:var(--navy);
-  margin-bottom:6px;letter-spacing:0.02em;
-}
-.form-row input,.form-row textarea{
-  width:100%;padding:12px 14px;font-family:inherit;font-size:15px;
-  background:#fff;border:1.5px solid var(--line);border-radius:6px;
-  color:var(--text);transition:.15s;
-}
-.form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--amber)}
-.form-row textarea{min-height:120px;resize:vertical}
-.req::after{content:" *";color:var(--red)}
-.form-card .btn{width:100%;margin-top:8px}
-.calendar-card{
-  background:#fff;border:2px dashed var(--amber);border-radius:8px;padding:32px;
-}
-.calendar-card .small-label{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
-.calendar-card h4{margin-bottom:16px;color:var(--navy)}
-.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:16px}
-.cal-day-label{font-size:10px;color:var(--muted);text-align:center;padding:4px 0;font-weight:600}
-.cal-day{
-  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
-  font-size:13px;color:var(--text);border-radius:4px;cursor:pointer;
-  border:1px solid transparent;
-}
-.cal-day:hover{background:var(--cream)}
-.cal-day.available{background:var(--cream);color:var(--navy);font-weight:600}
-.cal-day.selected{background:var(--navy);color:#fff;font-weight:700}
-.cal-day.empty{visibility:hidden}
-.contact-info-block{
-  background:var(--navy);color:#fff;padding:40px;border-radius:8px;
-}
-.contact-info-block h4{color:#fff;margin-bottom:20px}
-.contact-info-block .info-row{
-  padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.1);
-}
-.contact-info-block .info-row:last-child{border-bottom:none}
-.contact-info-block .info-label{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
-.contact-info-block .info-value{font-size:15px;color:#fff}
-.contact-info-block a{color:#fff;border-bottom:1px solid var(--amber)}
-.reassurance-strip{
-  background:var(--cream);padding:48px 0;text-align:center;
-}
-.reassurance-strip p{
-  max-width:700px;margin:0 auto;font-size:18px;color:var(--navy);font-weight:500;line-height:1.5;
-}
-
-/* ================ RESULTS PAGE — placeholder ================ */
-.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.results-card{
-  background:#fff;border:1.5px dashed var(--line);
-  border-radius:8px;padding:48px 32px;text-align:center;
-  display:flex;flex-direction:column;align-items:center;gap:12px;
-}
-.results-card .placeholder-logo{
-  width:72px;height:72px;border-radius:50%;
-  background:var(--cream);color:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:22px;letter-spacing:0.05em;
-}
-.results-card h4{color:var(--navy);font-size:18px}
-.results-card p{font-size:14px;color:var(--muted)}
-.results-card .coming-soon{
-  font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--amber);background:var(--navy);
-  padding:4px 10px;border-radius:4px;
-}
-
-/* ================ MOCKUP DIVIDER (helper, remove in GHL build) ================ */
-.mockup-divider{
-  background:#0d1d2e;color:var(--amber);padding:14px 24px;
-  font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
-  text-align:center;border-top:2px solid var(--amber);border-bottom:2px solid var(--amber);
-}
-.mockup-divider span{color:rgba(255,255,255,0.5);margin:0 12px;font-weight:400}
+.bucket-service p{font-size:15px;color:var(--text);line-height:1.55;max-width:250px}
 
 /* ================ RESPONSIVE ================ */
 @media(max-width:900px){
@@ -588,6 +475,8 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
   .crm-grid,.bucket-head,.story-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;gap:32px}
   .crm-spotlight,.testimonials,.story,.differentiators,.final-cta{padding:64px 0}
   .form-row.two-col{grid-template-columns:1fr}
+  .intro-strip-inner{flex-direction:column;padding:32px 0}
+  .intro-strip-img{width:80%;margin-left:0}
 }
 
 /* ================ SCROLL REVEAL ================ */
@@ -604,23 +493,23 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
 </head>
 <body>
 
-<section id="about">
+<section id="crm-page">
 
+  <!-- Site nav repeats -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo"><img src="images/gss-horizontal-logo.svg" alt="Gain Street Strategy"></a>
       <ul class="nav-links">
         <li class="nav-dropdown">
-          <a href="services.html" class="nav-dropdown-trigger">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <a href="services.html" class="nav-dropdown-trigger active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
           <ul class="nav-dropdown-menu">
             <li><a href="services.html">Branding &amp; Design</a></li>
             <li><a href="websites.html">Websites</a></li>
-            <li><a href="crm.html">CRM</a></li>
+            <li><a href="crm.html" class="active">CRM</a></li>
           </ul>
         </li>
         <li><a href="results.html">Results</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <a href="contact.html" class="btn nav-cta">Book a free call</a>
@@ -630,12 +519,12 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
     </div>
     <div class="mobile-menu" id="mobileMenu">
       <ul class="mobile-menu-links">
-        <li class="mobile-dropdown">
+        <li class="mobile-dropdown open">
           <button type="button" class="mobile-dropdown-trigger">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <ul class="mobile-dropdown-menu">
             <li><a href="services.html">Branding &amp; Design</a></li>
             <li><a href="websites.html">Websites</a></li>
-            <li><a href="crm.html">CRM</a></li>
+            <li><a href="crm.html" class="active">CRM</a></li>
           </ul>
         </li>
         <li><a href="results.html">Results</a></li>
@@ -648,88 +537,94 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
 
   <!-- HERO -->
   <div class="hero-dark">
-    <div class="container">
-      <h1>We know the trades. We know marketing. <span class="amber-mark">We put both to work for you.</span></h1>
-      <p class="lede">Gain Street Strategy is a roofing and construction marketing specialist based in British Columbia, serving contractors across Canada and the United States.</p>
+    <img src="images/gss-logo-round-white.svg" alt="" class="hero-watermark">
+    <div class="container center">
+      <span class="eyebrow on-dark">Gain Street CRM</span>
+      <h1>The CRM built for how <span class="amber-mark">contractors actually work.</span></h1>
+      <p class="lede">Off-the-shelf CRMs are built for offices, not job sites. Gain Street CRM is included as part of your GSS partnership — no extra subscription, no learning curve.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-lg"><span class="chk">✓</span>Ask us about the CRM</a>
+      </div>
     </div>
   </div>
 
-  <!-- TOM'S STORY -->
-  <section class="story">
+  <!-- WHY CONTRACTORS SWITCH -->
+  <section class="section services-overview">
     <div class="container">
-      <div class="story-grid">
-        <div class="story-photo"><img src="images/tom-headshot.jpeg" alt="Tom Macauley, founder of Gain Street Strategy"></div>
-        <div class="story-body">
-          <span class="eyebrow">Why we built GSS</span>
-          <h2>Why we built GSS for the trades</h2>
-          <p>Most marketing agencies treat contractors like any other client. They run the same generic social posts, the same templated ads, and hand over the same reports — without ever understanding what it's like to run a job site, manage a crew, or win a commercial tender.</p>
-          <p>Gain Street Strategy was built differently. We focus exclusively on roofing and construction because we believe contractors deserve a marketing partner who genuinely understands their world — the seasonality, the relationships, the reputation-driven nature of the business.</p>
-          <p>Tom Macauley, founder of GSS, has spent years working with trades businesses across Canada and the US. That experience shaped everything about how GSS operates: straightforward communication, strategies that fit how contractors actually work, and results you can see in your pipeline — not just your analytics dashboard.</p>
+      <div class="center" style="max-width:700px;margin:0 auto">
+        <span class="eyebrow subtle">Why it's different</span>
+        <h2>Everything your team needs, nothing it doesn't.</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></div>
+          <h3>Built for the field</h3>
+          <p>Update jobs, log photos, and check your pipeline from any phone — no laptop, no office required.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <h3>Follow-ups that don't fall through</h3>
+          <p>Automatic reminders, synced texts, and emails mean no lead goes cold while you're on a roof.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <h3>Reporting without the busywork</h3>
+          <p>Simple, plain-English reports so you always know what's actually working — no dashboards to decode.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DIFFERENTIATORS -->
-  <section class="differentiators">
+  <!-- CRM SPOTLIGHT -->
+  <section class="crm-spotlight" id="gain-street-crm">
     <div class="container">
-      <div class="center" style="max-width:700px;margin:0 auto 12px">
-        <span class="eyebrow">What makes us different</span>
-        <h2>Why contractors choose GSS over a generalist agency</h2>
-      </div>
-      <div class="diff-grid">
-        <div class="diff-card">
-          <span class="diff-num">01</span>
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
-          <h3>Built for roofing and construction — only</h3>
-          <p>We don't work with restaurants, tech startups, or retail brands. Every strategy, every tool, and every piece of copy we produce is written for a trades audience.</p>
+      <div class="crm-grid">
+        <div>
+          <span class="eyebrow">Our own tool — built for the trades</span>
+          <h2>Lead to signed contract, all in one place</h2>
+          <p>Gain Street CRM was designed specifically for contractors — track every lead, manage follow-ups, and see your full pipeline at a glance.</p>
+          <ul class="crm-checklist-detailed">
+            <li><span class="chk-round">✓</span> Track leads from first contact to signed contract</li>
+            <li><span class="chk-round">✓</span> Manage follow-up reminders so no job falls through</li>
+            <li><span class="chk-round">✓</span> See your full pipeline at a glance</li>
+            <li><span class="chk-round">✓</span> Built for mobile — works from the job site</li>
+            <li><span class="chk-round">✓</span> Synced with your follow-up texts and emails automatically</li>
+            <li><span class="chk-round">✓</span> Attach photos and notes to every job</li>
+            <li><span class="chk-round">✓</span> Simple reporting so you know what's actually working</li>
+          </ul>
+          <a href="contact.html" class="crm-cta">Ask us about the CRM →</a>
         </div>
-        <div class="diff-card">
-          <span class="diff-num">02</span>
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <h3>Our own CRM — included</h3>
-          <p>Most agencies hand you a strategy and leave you to execute. We give you Gain Street CRM — our own tool — to track every lead and manage your pipeline alongside your marketing.</p>
-        </div>
-        <div class="diff-card">
-          <span class="diff-num">03</span>
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <h3>Canada and the US — we know both markets</h3>
-          <p>Canadian contractors deal with different seasonality, regional markets, and buyer relationships than US contractors. We understand both sides of the border and tailor our approach accordingly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS (repeat) -->
-  <section class="testimonials">
-    <div class="container">
-      <div class="center" style="max-width:700px;margin:0 auto 12px">
-        <span class="eyebrow">Real feedback</span>
-        <h2>What contractors say about working with GSS</h2>
-      </div>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <blockquote>"Tom and the GSS team have been instrumental in building our brand. What sets them apart is Tom's commitment to truly understanding our company's unique persona."</blockquote>
-          <div class="testimonial-author">
-            <div class="author-logo"><img src="images/Service AdvantEdge logo.webp" alt="Service AdvantEdge"></div>
-            <div class="author-meta"><strong>Ross Friedman</strong><span>Service AdvantEdge</span></div>
+        <div class="crm-mock">
+          <div class="crm-mock-logo"><img src="images/gss-horizontal-logo.svg" alt="Gain Street Strategy"></div>
+          <div class="crm-mock-header">
+            <strong>Gain Street CRM · Lead to Contract</strong>
+            <span class="pill">Full visibility, every step</span>
           </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <blockquote>"Tom and his team provide a wealth of experienced-based knowledge. They helped us streamline our ideas and get us to a much better spot with our marketing."</blockquote>
-          <div class="testimonial-author">
-            <div class="author-logo"><img src="images/Refresh Exteriors logo.webp" alt="Refresh Exteriors"></div>
-            <div class="author-meta"><strong>Zachary Schoop</strong><span>Refresh Exteriors</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <blockquote>"I had a fantastic experience working with Tom and the team at GSS. Their professionalism, responsiveness, and commitment to results were evident throughout the entire process."</blockquote>
-          <div class="testimonial-author">
-            <div class="author-logo"><img src="images/Untold Branding logo.webp" alt="Untold Branding"></div>
-            <div class="author-meta"><strong>Paul Beauchemin</strong><span>Untold Branding</span></div>
+          <div class="funnel">
+            <div class="funnel-step">
+              <span class="funnel-icon">1</span>
+              <div class="funnel-text"><strong>New Lead</strong><span>Inquiry captured automatically</span></div>
+            </div>
+            <div class="funnel-arrow">↓</div>
+            <div class="funnel-step funnel-step-2">
+              <span class="funnel-icon">2</span>
+              <div class="funnel-text"><strong>Contacted</strong><span>Follow-up call or text sent</span></div>
+            </div>
+            <div class="funnel-arrow">↓</div>
+            <div class="funnel-step funnel-step-3">
+              <span class="funnel-icon">3</span>
+              <div class="funnel-text"><strong>Quoted</strong><span>Estimate sent and tracked</span></div>
+            </div>
+            <div class="funnel-arrow">↓</div>
+            <div class="funnel-step funnel-step-4">
+              <span class="funnel-icon">4</span>
+              <div class="funnel-text"><strong>Follow-Up</strong><span>Reminders keep it moving</span></div>
+            </div>
+            <div class="funnel-arrow">↓</div>
+            <div class="funnel-step funnel-step-final">
+              <span class="funnel-icon">✓</span>
+              <div class="funnel-text"><strong>Signed Contract</strong><span>Job won, work begins</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -739,9 +634,10 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
-      <h2>Let's talk about your business.</h2>
-      <p class="lede">No pitch, no pressure. Just a straight conversation about where you are and where you want to go.</p>
+      <h2>Already a GSS partner? The CRM is already yours.</h2>
+      <p class="lede">Gain Street CRM comes included with every GSS partnership — no extra subscription. New here? Book a call and we'll show you how it fits into your day-to-day.</p>
       <a href="contact.html" class="btn btn-lg"><span class="chk">✓</span>Book a free strategy call</a>
+      <div class="phone-line">Or call: <a href="tel:2502582247">(250) 258-2247</a></div>
     </div>
   </section>
 
@@ -761,7 +657,6 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
           <li><a href="services.html">Services</a></li>
           <li><a href="results.html">Results</a></li>
           <li><a href="about.html">About</a></li>
-          
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -809,19 +704,6 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
     targets.forEach(function(el){ io.observe(el); });
   } else {
     targets.forEach(function(el){ el.classList.add('in-view'); });
-  }
-
-  var hero = document.querySelector('.hero-dark');
-  if(hero){
-    var ticking = false;
-    function updateParallax(){
-      var offset = Math.min(window.scrollY * 0.25, 120);
-      hero.style.backgroundPosition = 'center calc(50% + ' + offset + 'px)';
-      ticking = false;
-    }
-    window.addEventListener('scroll', function(){
-      if(!ticking){ requestAnimationFrame(updateParallax); ticking = true; }
-    },{passive:true});
   }
 })();
 </script>

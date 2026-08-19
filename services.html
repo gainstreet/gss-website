@@ -4,11 +4,11 @@
 <script>document.documentElement.classList.add('js');</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services — Gain Street Strategy</title>
-<meta name="description" content="Explore Gain Street Strategy's services for roofing and construction contractors: websites, lead generation, branding, and the Gain Street CRM.">
+<title>Branding &amp; Design — Gain Street Strategy</title>
+<meta name="description" content="Explore Gain Street Strategy's branding, demand generation, and conversion services for roofing and construction contractors.">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-<meta property="og:title" content="Services — Gain Street Strategy">
-<meta property="og:description" content="Websites, lead generation, branding, and CRM services built for roofing and construction contractors.">
+<meta property="og:title" content="Branding &amp; Design — Gain Street Strategy">
+<meta property="og:description" content="Branding, demand generation, and conversion services built for roofing and construction contractors.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/services-line-image.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -132,24 +132,82 @@ footer .logo .street{color:#fff}
 .nav-links a.active{color:var(--navy);border-bottom:2px solid var(--amber);padding-bottom:4px}
 .nav-cta{padding:12px 22px;font-size:14px}
 
+/* ---- Services dropdown ---- */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:inline-flex;align-items:center;gap:5px;cursor:default}
+.nav-dropdown-trigger svg{width:11px;height:11px;transition:.15s;flex-shrink:0}
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+.nav-dropdown-menu{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  background:#fff;border:1px solid var(--line);border-radius:8px;
+  box-shadow:0 16px 36px rgba(20,30,45,0.14);
+  min-width:200px;padding:8px;list-style:none;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .15s;
+  z-index:60;
+}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto}
+.nav-dropdown-menu li{padding:0}
+.nav-dropdown-menu a{
+  display:block;padding:10px 14px;border-radius:6px;font-size:14px;font-weight:600;color:var(--text);
+  border:none;box-shadow:none;outline:none;
+}
+.nav-dropdown-menu a:hover{background:var(--cream);color:var(--navy)}
+.nav-dropdown-menu a:focus{outline:none;box-shadow:none}
+.nav-dropdown-menu a.active{color:var(--navy);background:var(--cream)}
+
+/* ---- Mobile menu ---- */
+.nav-toggle{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:36px;height:36px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;
+}
+.nav-toggle span{display:block;width:100%;height:2px;background:var(--navy);border-radius:2px;transition:.2s}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{
+  display:none;position:absolute;top:100%;left:0;right:0;
+  background:#fff;border-top:1px solid var(--line);
+  padding:8px 24px 24px;max-height:80vh;overflow-y:auto;
+  box-shadow:0 16px 32px rgba(20,30,45,0.1);
+}
+.mobile-menu.active{display:block}
+.mobile-menu-links{list-style:none;display:flex;flex-direction:column}
+.mobile-menu-links>li{border-bottom:1px solid var(--line)}
+.mobile-menu-links>li:last-child{border-bottom:none}
+.mobile-menu-links>li>a,
+.mobile-dropdown-trigger{
+  display:flex;align-items:center;justify-content:space-between;width:100%;
+  padding:16px 4px;font-family:'Inter',sans-serif;font-weight:600;font-size:17px;color:var(--navy);
+  background:none;border:none;text-align:left;cursor:pointer;
+}
+.mobile-dropdown-trigger svg{width:14px;height:14px;transition:.2s;flex-shrink:0;color:var(--muted)}
+.mobile-dropdown.open .mobile-dropdown-trigger svg{transform:rotate(180deg)}
+.mobile-dropdown-menu{list-style:none;max-height:0;overflow:hidden;transition:max-height .25s ease}
+.mobile-dropdown.open .mobile-dropdown-menu{max-height:240px}
+.mobile-dropdown-menu li{padding-left:12px}
+.mobile-dropdown-menu a{display:block;padding:12px 8px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:var(--text)}
+.mobile-dropdown-menu a.active{color:var(--navy)}
+.mobile-menu-cta{margin-top:20px;width:100%}
+
 /* ================ HERO (dark) ================ */
 .hero-dark{
-  background:var(--navy) url('images/hero4.webp') center/cover no-repeat;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(255,183,3,0.14),transparent 45%),
+    radial-gradient(circle at 88% 78%,rgba(170,0,51,0.14),transparent 45%),
+    var(--navy);
   color:#fff;
   padding:96px 0 112px;
   position:relative;overflow:hidden;
 }
-.hero-dark::before{
-  content:"";position:absolute;inset:0;
-  background:
-    radial-gradient(circle at 20% 30%,rgba(255,183,3,0.06),transparent 40%),
-    radial-gradient(circle at 80% 70%,rgba(170,0,51,0.05),transparent 40%);
-  pointer-events:none;
+.hero-dark .container{position:relative;z-index:1}
+.hero-watermark{
+  position:absolute;top:50%;right:-100px;transform:translateY(-50%);
+  width:440px;height:440px;opacity:0.05;pointer-events:none;z-index:0;
 }
-.hero-dark .container{position:relative}
-.hero-dark h1{color:#fff;max-width:880px;margin-bottom:24px}
-.hero-dark .lede{color:rgba(255,255,255,0.85);max-width:680px;margin-bottom:40px}
-.hero-dark .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.hero-dark h1{color:#fff;max-width:880px;margin:0 auto 24px}
+.hero-dark .lede{color:rgba(255,255,255,0.85);max-width:680px;margin:0 auto 40px}
+.hero-dark .hero-actions{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
 
 /* light hero variant for contact */
 .hero-light{
@@ -445,7 +503,7 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
 /* ================ SERVICES PAGE — BUCKETS ================ */
 .bucket{padding:80px 0;border-bottom:1px solid var(--line)}
 .bucket:nth-child(even){background:var(--cream)}
-.bucket-head{max-width:700px;margin-bottom:40px}
+.bucket-head{max-width:700px;margin:0 auto 40px;text-align:center}
 .bucket-num{
   display:inline-block;
   font-family:'Inter',sans-serif;font-size:13px;font-weight:700;
@@ -453,8 +511,8 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
   color:var(--navy);background:var(--amber);
   padding:6px 14px;border-radius:4px;margin-bottom:16px;
 }
-.bucket-head h2{margin-bottom:16px;max-width:420px}
-.bucket-head p{font-size:18px;line-height:1.6;color:var(--text);max-width:480px}
+.bucket-head h2{margin-bottom:16px}
+.bucket-head p{font-size:18px;line-height:1.6;color:var(--text)}
 .bucket-services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .bucket-service{
   background:#fff;padding:44px 28px;border-radius:8px;
@@ -586,6 +644,7 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
   h2{font-size:28px}
   .section{padding:64px 0}
   .nav-links{display:none}
+  .nav-toggle{display:flex}
   .problem-grid,.services-grid,.testimonial-grid,.bucket-services,.diff-grid,.results-grid,.work-grid{grid-template-columns:1fr}
   .crm-grid,.bucket-head,.story-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;gap:32px}
   .crm-spotlight,.testimonials,.story,.differentiators,.final-cta{padding:64px 0}
@@ -615,19 +674,46 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
     <div class="nav-inner">
       <a href="index.html" class="logo"><img src="images/gss-horizontal-logo.svg" alt="Gain Street Strategy"></a>
       <ul class="nav-links">
-        <li><a href="services.html" class="active">Services</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-dropdown-trigger active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="services.html" class="active">Branding &amp; Design</a></li>
+            <li><a href="websites.html">Websites</a></li>
+            <li><a href="crm.html">CRM</a></li>
+          </ul>
+        </li>
         <li><a href="results.html">Results</a></li>
         <li><a href="about.html">About</a></li>
-        
+
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <a href="contact.html" class="btn nav-cta">Book a free call</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-menu-links">
+        <li class="mobile-dropdown open">
+          <button type="button" class="mobile-dropdown-trigger">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="services.html" class="active">Branding &amp; Design</a></li>
+            <li><a href="websites.html">Websites</a></li>
+            <li><a href="crm.html">CRM</a></li>
+          </ul>
+        </li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn mobile-menu-cta">Book a free call</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <div class="hero-dark">
-    <div class="container">
+    <img src="images/gss-logo-round-white.svg" alt="" class="hero-watermark">
+    <div class="container center">
       <h1>A brand that looks as <span class="amber-mark">sharp as your work.</span></h1>
       <p class="lede">From logo to leads — we build a brand contractors trust, then back it with the marketing and follow-through that keeps the phone ringing.</p>
       <div class="hero-actions">
@@ -728,62 +814,6 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
     </div>
   </section>
 
-  <!-- CRM SPOTLIGHT (repeat from home, expanded) -->
-  <section class="crm-spotlight" id="gain-street-crm">
-    <div class="container">
-      <div class="crm-grid">
-        <div>
-          <span class="eyebrow">Our own tool — built for the trades</span>
-          <h2>The CRM built for how roofing and construction crews actually work</h2>
-          <p>Off-the-shelf CRMs are built for offices, not job sites. Gain Street CRM was designed specifically for contractors — and it's included as part of your GSS partnership, with no extra subscription and no learning curve.</p>
-          <ul class="crm-checklist-detailed">
-            <li><span class="chk-round">✓</span> Track leads from first contact to signed contract</li>
-            <li><span class="chk-round">✓</span> Manage follow-up reminders so no job falls through</li>
-            <li><span class="chk-round">✓</span> See your full pipeline at a glance</li>
-            <li><span class="chk-round">✓</span> Built for mobile — works from the job site</li>
-            <li><span class="chk-round">✓</span> Synced with your follow-up texts and emails automatically</li>
-            <li><span class="chk-round">✓</span> Attach photos and notes to every job</li>
-            <li><span class="chk-round">✓</span> Simple reporting so you know what's actually working</li>
-          </ul>
-          <a href="contact.html" class="crm-cta">Ask us about the CRM →</a>
-        </div>
-        <div class="crm-mock">
-          <div class="crm-mock-logo"><img src="images/gss-horizontal-logo.svg" alt="Gain Street Strategy"></div>
-          <div class="crm-mock-header">
-            <strong>Gain Street CRM · Lead to Contract</strong>
-            <span class="pill">Full visibility, every step</span>
-          </div>
-          <div class="funnel">
-            <div class="funnel-step">
-              <span class="funnel-icon">1</span>
-              <div class="funnel-text"><strong>New Lead</strong><span>Inquiry captured automatically</span></div>
-            </div>
-            <div class="funnel-arrow">↓</div>
-            <div class="funnel-step funnel-step-2">
-              <span class="funnel-icon">2</span>
-              <div class="funnel-text"><strong>Contacted</strong><span>Follow-up call or text sent</span></div>
-            </div>
-            <div class="funnel-arrow">↓</div>
-            <div class="funnel-step funnel-step-3">
-              <span class="funnel-icon">3</span>
-              <div class="funnel-text"><strong>Quoted</strong><span>Estimate sent and tracked</span></div>
-            </div>
-            <div class="funnel-arrow">↓</div>
-            <div class="funnel-step funnel-step-4">
-              <span class="funnel-icon">4</span>
-              <div class="funnel-text"><strong>Follow-Up</strong><span>Reminders keep it moving</span></div>
-            </div>
-            <div class="funnel-arrow">↓</div>
-            <div class="funnel-step funnel-step-final">
-              <span class="funnel-icon">✓</span>
-              <div class="funnel-text"><strong>Signed Contract</strong><span>Job won, work begins</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
@@ -817,10 +847,9 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
       <div>
         <h5><a href="services.html">Services</a></h5>
         <ul>
-          <li><a href="services.html#get-found">Get found</a></li>
-          <li><a href="services.html#win-more-work">Win more work</a></li>
-          <li><a href="services.html#look-the-part">Look the part</a></li>
-          <li><a href="services.html#gain-street-crm">Gain Street CRM</a></li>
+          <li><a href="services.html">Branding &amp; Design</a></li>
+          <li><a href="websites.html">Websites</a></li>
+          <li><a href="crm.html">CRM</a></li>
         </ul>
       </div>
       <div>
@@ -873,6 +902,24 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
       if(!ticking){ requestAnimationFrame(updateParallax); ticking = true; }
     },{passive:true});
   }
+})();
+</script>
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  if(toggle && menu){
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('active');
+      toggle.classList.toggle('active', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('.mobile-dropdown-trigger').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btn.closest('.mobile-dropdown').classList.toggle('open');
+    });
+  });
 })();
 </script>
 </body>
