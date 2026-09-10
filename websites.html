@@ -4,11 +4,11 @@
 <script>document.documentElement.classList.add('js');</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Managed Websites for Contractors — Gain Street Strategy</title>
-<meta name="description" content="A professional website for your roofing or construction business — built, hosted, and kept current. Choose the ongoing support level your business needs.">
+<title>Websites for Commercial Roofing Contractors — Gain Street Strategy</title>
+<meta name="description" content="Websites for commercial roofing contractors across the USA. Up to five standard pages for US$750 setup, with hosting and maintenance from US$97/month. All prices USD, applicable taxes extra.">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-<meta property="og:title" content="Managed Websites for Contractors — Gain Street Strategy">
-<meta property="og:description" content="A professional website built, hosted, and kept current — with a monthly plan that fits your business.">
+<meta property="og:title" content="Websites for Commercial Roofing Contractors — Gain Street Strategy">
+<meta property="og:description" content="A professional website without the huge upfront bill. US$750 setup for up to five standard pages, hosting and maintenance from US$97/month.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/services-line-image.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -131,7 +131,7 @@ footer .logo .street{color:#fff}
 .nav-links a{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:var(--text);transition:.15s}
 .nav-links a:hover{color:var(--navy)}
 .nav-links a.active{color:var(--navy);border-bottom:2px solid var(--amber);padding-bottom:4px}
-.nav-cta{padding:12px 22px;font-size:14px}
+.nav-cta{padding:12px 22px;font-size:14px;white-space:nowrap;flex-shrink:0}
 
 /* ---- Services dropdown ---- */
 .nav-dropdown{position:relative}
@@ -217,6 +217,7 @@ footer .logo .street{color:#fff}
   .section{padding:64px 0}
   .nav-links{display:none}
   .nav-toggle{display:flex}
+  .nav-cta{padding:11px 16px;font-size:13px}
 }
 
 /* ================ SCROLL REVEAL ================ */
@@ -261,12 +262,27 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
    PAGE-SPECIFIC — MANAGED WEBSITES PRICING
    ===================================================== */
 
+/* ---- hero offer block ---- */
+.hero-price-note{
+  font-family:'Inter',sans-serif;font-size:13px;
+  color:rgba(255,255,255,0.7);margin-top:14px;
+}
+.hero-cta-row{
+  margin-top:28px;display:flex;align-items:center;justify-content:center;
+  gap:24px;flex-wrap:wrap;
+}
+.hero-secondary-link{
+  font-family:'Inter',sans-serif;font-size:15px;font-weight:600;
+  color:#fff;border-bottom:2px solid var(--amber);padding-bottom:3px;
+}
+.hero-secondary-link:hover{color:var(--amber)}
+
 /* ---- launch price bar (overlaps hero) ---- */
 .launch-bar-wrap{margin-top:-24px;position:relative;z-index:2}
 .launch-bar{
   background:#fff;border-radius:12px;overflow:hidden;
   box-shadow:0 24px 48px rgba(20,30,45,0.18);
-  display:grid;grid-template-columns:1.15fr 1fr 1fr 1fr;
+  display:grid;grid-template-columns:1.3fr 1fr 1fr;
 }
 .launch-bar-lead{
   background:var(--navy);color:#fff;padding:32px 28px;
@@ -333,6 +349,10 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
 .style-card-label h4{color:var(--navy);margin-bottom:6px}
 .style-card-label p{font-size:13px;color:var(--muted);line-height:1.5}
 .style-card img{cursor:zoom-in}
+.style-disclaimer{
+  font-family:'Inter',sans-serif;font-size:12.5px;
+  color:rgba(255,255,255,0.8);margin-top:10px;
+}
 
 /* ================ LIGHTBOX ================ */
 .lightbox-overlay{
@@ -360,7 +380,7 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
 
 /* ---- management tier cards ---- */
 .plans-section{background:var(--cream)}
-.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px;align-items:start}
+.plan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:56px;align-items:start;max-width:820px;margin-left:auto;margin-right:auto}
 .plan-card{
   background:#fff;border:1.5px solid var(--line);border-radius:12px;
   padding:36px 32px;display:flex;flex-direction:column;position:relative;
@@ -445,8 +465,10 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
   .plan-grid{grid-template-columns:1fr}
   .scope-grid{grid-template-columns:1fr;gap:32px}
   .compare-wrap{overflow-x:auto}
-  table.compare-table{min-width:640px}
+  table.compare-table{min-width:520px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .hero-cta-row{flex-direction:column;gap:18px}
+  .hero-cta-row .btn{width:100%}
 }
 </style>
 </head>
@@ -471,7 +493,7 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="contact.html" class="btn nav-cta">Book a free call</a>
+      <a href="contact.html#book-a-call" class="btn nav-cta">Get in touch</a>
       <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -490,7 +512,7 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="contact.html" class="btn mobile-menu-cta">Book a free call</a>
+      <a href="contact.html#book-a-call" class="btn mobile-menu-cta">Get in touch</a>
     </div>
   </nav>
 
@@ -498,9 +520,14 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
   <div class="hero-dark">
     <img src="images/gss-logo-round-white.svg" alt="" class="hero-watermark">
     <div class="container center">
-      <span class="eyebrow on-dark">Managed websites for contractors</span>
-      <h1>A professional website<span class="amber-mark">—</span> built, hosted, and kept current.</h1>
-      <p class="lede">Choose the ongoing support level your business needs. Your one-time launch price is based transparently on page count.</p>
+      <span class="eyebrow on-dark">Websites for commercial roofing contractors</span>
+      <h1>A professional website without the huge upfront bill.</h1>
+      <p class="lede">Websites for commercial roofing contractors across the USA. Get up to five standard pages for US$750 setup, with hosting and maintenance from US$97/month.</p>
+      <p class="hero-price-note">All prices USD. Applicable taxes extra.</p>
+      <div class="hero-cta-row">
+        <a href="contact.html#book-a-call" class="btn btn-lg"><span class="chk">✓</span>Get in touch</a>
+        <a href="website-questionnaire.html" class="hero-secondary-link">Or start the questionnaire →</a>
+      </div>
     </div>
   </div>
 
@@ -509,24 +536,19 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
     <div class="container">
       <div class="launch-bar">
         <div class="launch-bar-lead">
-          <span class="tag">One-time launch</span>
-          <strong>Pay once for the site we build</strong>
-          <span>Fixed page count, agreed upfront for each tier.</span>
+          <span class="tag">One-time setup</span>
+          <strong>Pay once to build it, then a flat monthly fee</strong>
+          <span>Same setup fee on both plans. All prices USD, applicable taxes extra.</span>
         </div>
         <div class="launch-col launch-col-yellow">
           <span class="label">Core website</span>
           <div class="amount">$750</div>
-          <p>Up to five standard pages.</p>
+          <p>Up to five standard pages. Additional standard pages $100 each.</p>
         </div>
         <div class="launch-col launch-col-amber">
-          <span class="label">Additional pages</span>
-          <div class="amount">+$100</div>
-          <p>For each additional standard page.</p>
-        </div>
-        <div class="launch-col launch-col-red">
-          <span class="label">AI setup</span>
-          <div class="amount">+$500</div>
-          <p>Knowledge base, qualification, handoff, and onsite setup.</p>
+          <span class="label">Hosting &amp; maintenance</span>
+          <div class="amount">from $97</div>
+          <p>Per month on Foundation. Growth from $197.</p>
         </div>
       </div>
     </div>
@@ -538,7 +560,7 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
       <div class="center" style="max-width:700px;margin:0 auto">
         <span class="eyebrow subtle">How it works</span>
         <h2>From questionnaire<br>to live site.</h2>
-        <p class="lede" style="margin-top:12px">A fast, guided process — built with AI, refined by our team.</p>
+        <p class="lede" style="margin-top:12px">A fast, guided process, reviewed and refined by our team.</p>
       </div>
       <div class="steps-row">
         <div class="step-item">
@@ -557,7 +579,7 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
           <div class="step-num">3</div>
           <div class="step-connector"></div>
           <h4>We build it</h4>
-          <p>We build the site using a combination of AI tools and hands-on development.</p>
+          <p>Our team builds the site using modern tools to accelerate delivery, then reviews and refines every page.</p>
         </div>
         <div class="step-item">
           <div class="step-num">4</div>
@@ -568,7 +590,7 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
         <div class="step-item">
           <div class="step-num">5</div>
           <h4>Launch</h4>
-          <p>We launch — hosted, secured, and ready to generate leads.</p>
+          <p>We launch — hosted, secured, and ready to receive enquiries.</p>
         </div>
       </div>
     </div>
@@ -581,6 +603,7 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
         <span class="eyebrow subtle">Pick a style</span>
         <h2>A look that fits<br>your business.</h2>
         <p class="lede" style="margin-top:12px">In the questionnaire, you'll choose from a few starting directions — here's a preview.</p>
+        <p class="style-disclaimer">Illustrative examples, not client work.</p>
       </div>
       <div class="style-grid">
         <div class="style-card">
@@ -624,28 +647,27 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
       <div class="center" style="max-width:700px;margin:0 auto">
         <span class="eyebrow">Ongoing service</span>
         <h2>Choose how much management you want</h2>
-        <p class="lede" style="margin-top:12px">Every plan covers the essential infrastructure. Higher plans add conversion support and a managed AI front desk.</p>
+        <p class="lede" style="margin-top:12px">Both plans cover the essential infrastructure. Growth adds ongoing website updates, more detailed estimate requests, and a clearer view of performance.</p>
       </div>
       <div class="plan-grid">
         <div class="plan-card">
           <h3>Foundation</h3>
-          <p class="plan-desc">For a contractor that needs a reliable website kept secure, live, and current.</p>
-          <div class="plan-price"><span class="currency">$</span><span class="amount">199</span><span class="period">/month + taxes</span></div>
+          <p class="plan-desc">A professional website with hosting and technical maintenance handled. Content changes are quoted separately.</p>
+          <div class="plan-price"><span class="currency">$</span><span class="amount">97</span><span class="period">/month</span></div>
           <div class="plan-price-note">USD · plus applicable taxes</div>
           <ul class="plan-features">
-            <li><span class="chk-round">✓</span>Mobile-first website</li>
+            <li><span class="chk-round">✓</span>Mobile-friendly website</li>
             <li><span class="chk-round">✓</span>Managed hosting, SSL, backups, and uptime monitoring</li>
             <li><span class="chk-round">✓</span>Click-to-call and standard estimate form</li>
             <li><span class="chk-round">✓</span>Basic analytics and form conversion tracking</li>
-            <li><span class="chk-round">✓</span>Two small website edits each month</li>
           </ul>
-          <a href="contact.html" class="btn btn-block">Discuss Foundation</a>
+          <a href="contact.html#book-a-call" class="btn btn-block">Get in touch</a>
         </div>
         <div class="plan-card featured">
           <span class="plan-badge">Recommended</span>
           <h3>Growth</h3>
-          <p class="plan-desc">For a contractor that wants to capture better reviews and requests, and improve conversions over time.</p>
-          <div class="plan-price"><span class="currency">$</span><span class="amount">349</span><span class="period">/month</span></div>
+          <p class="plan-desc">For contractors who want ongoing website updates, more detailed estimate requests and a clearer view of performance.</p>
+          <div class="plan-price"><span class="currency">$</span><span class="amount">197</span><span class="period">/month</span></div>
           <div class="plan-price-note">USD · plus applicable taxes</div>
           <ul class="plan-features">
             <li><span class="chk-round">✓</span>Everything in Foundation</li>
@@ -655,22 +677,7 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
             <li><span class="chk-round">✓</span>Monthly performance summary</li>
             <li><span class="chk-round">✓</span>One conversion improvement recommendation each month</li>
           </ul>
-          <a href="contact.html" class="btn btn-block">Discuss Growth</a>
-        </div>
-        <div class="plan-card">
-          <h3>AI Front Desk</h3>
-          <p class="plan-desc">For a contractor that also wants approved answers, lead qualification, and a closer human handoff.</p>
-          <div class="plan-price"><span class="currency">$</span><span class="amount">499</span><span class="period">/month + taxes</span></div>
-          <div class="plan-price-note">USD · monthly usage allowance</div>
-          <ul class="plan-features">
-            <li><span class="chk-round">✓</span>Everything in Growth</li>
-            <li><span class="chk-round">✓</span>Client-approved FAQ and lead-qualification assistant</li>
-            <li><span class="chk-round">✓</span>Human handoff and task fallback</li>
-            <li><span class="chk-round">✓</span>Lead acknowledgment and routing, subject to consent</li>
-            <li><span class="chk-round">✓</span>Monthly transcript sampling and accuracy review</li>
-            <li><span class="chk-round">✓</span>Monthly knowledge-base update</li>
-          </ul>
-          <a href="contact.html" class="btn btn-block">Discuss AI Front Desk</a>
+          <a href="contact.html#book-a-call" class="btn btn-block">Get in touch</a>
         </div>
       </div>
     </div>
@@ -679,7 +686,7 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
   <!-- COMPARE TABLE -->
   <section class="section-sm compare-section">
     <div class="container">
-      <h2 class="center">Compare every plan</h2>
+      <h2 class="center">Compare both plans</h2>
       <div class="compare-wrap">
         <table class="compare-table">
           <thead>
@@ -687,19 +694,21 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
               <th>Included service</th>
               <th>Foundation</th>
               <th>Growth</th>
-              <th>AI Front Desk</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td>One-time setup</td>
+              <td>$750</td>
+              <td>$750</td>
+            </tr>
+            <tr>
               <td>Monthly price</td>
-              <td>$199</td>
-              <td>$349</td>
-              <td>$499 + usage</td>
+              <td>$97</td>
+              <td>$197</td>
             </tr>
             <tr>
               <td>Hosting, SSL, backups, monitoring</td>
-              <td class="yes"><span class="table-check">✓</span></td>
               <td class="yes"><span class="table-check">✓</span></td>
               <td class="yes"><span class="table-check">✓</span></td>
             </tr>
@@ -707,17 +716,14 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
               <td>Click-to-call</td>
               <td class="yes"><span class="table-check">✓</span></td>
               <td class="yes"><span class="table-check">✓</span></td>
-              <td class="yes"><span class="table-check">✓</span></td>
             </tr>
             <tr>
               <td>Estimate form</td>
               <td>Standard</td>
               <td>Detailed + photos</td>
-              <td>Detailed + photos</td>
             </tr>
             <tr>
               <td>Analytics and form tracking</td>
-              <td class="yes"><span class="table-check">✓</span></td>
               <td class="yes"><span class="table-check">✓</span></td>
               <td class="yes"><span class="table-check">✓</span></td>
             </tr>
@@ -725,43 +731,21 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
               <td>Before-and-after gallery</td>
               <td class="no">–</td>
               <td class="yes"><span class="table-check">✓</span></td>
-              <td class="yes"><span class="table-check">✓</span></td>
             </tr>
             <tr>
               <td>Small website edits</td>
-              <td>2/month</td>
-              <td>5/month</td>
+              <td>Quoted separately</td>
               <td>5/month</td>
             </tr>
             <tr>
               <td>Monthly performance summary</td>
               <td class="no">–</td>
               <td class="yes"><span class="table-check">✓</span></td>
-              <td class="yes"><span class="table-check">✓</span></td>
             </tr>
             <tr>
               <td>Monthly conversion recommendation</td>
               <td class="no">–</td>
               <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>FAQ and lead qualification assistant</td>
-              <td class="no">–</td>
-              <td class="no">–</td>
-              <td class="yes"><span class="table-check">✓</span></td>
-            </tr>
-            <tr>
-              <td>Human handoff and safe fallback</td>
-              <td class="no">–</td>
-              <td class="no">–</td>
-              <td class="yes"><span class="table-check">✓</span></td>
-            </tr>
-            <tr>
-              <td>Monthly AI review and knowledge update</td>
-              <td class="no">–</td>
-              <td class="no">–</td>
-              <td class="yes"><span class="table-check">✓</span></td>
             </tr>
           </tbody>
         </table>
@@ -776,15 +760,14 @@ table.compare-table{width:100%;border-collapse:collapse;font-family:'Inter',sans
         <div>
           <h2>Clear scope.<br>No surprises.</h2>
           <p class="lede">Everything is confirmed in writing before the build starts.</p>
-          <a href="contact.html" class="btn" style="margin-top:28px"><span class="chk">✓</span>Book a free strategy call</a>
+          <a href="contact.html#book-a-call" class="btn" style="margin-top:28px"><span class="chk">✓</span>Get in touch</a>
         </div>
         <div>
           <ul class="scope-list">
             <li>A standard page is one unique URL built from agreed components and client-approved content. Each service or service page counts separately.</li>
             <li>Complex forms, calculators, portals, e-commerce, member integrations, CRMs, intranets, paid media, phone/SMS bots, and custom automations are scoped separately.</li>
-            <li>AI is limited to sanctioned categories only: phone, forms, FAQs, or an existing website or chat on your page — no custom scraping or custom RAG.</li>
-            <li>The launch fee and first month are due before work begins. Monthly service is month-to-month after launch.</li>
-            <li>No timers, minimums, locked pricing, or revenue share. It's guaranteed.</li>
+            <li>The setup fee and first month are due before work begins. Monthly service is month-to-month after launch.</li>
+            <li>Initial payment is US$847 for Foundation or US$947 for Growth, before tax and separately agreed extras.</li>
           </ul>
           <p class="price-footnote">All prices are in U.S. dollars. Applicable taxes and separate quoted third-party costs are additional.</p>
         </div>
