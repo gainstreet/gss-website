@@ -121,3 +121,20 @@ nav a:hover,nav a[aria-current]{text-decoration:underline;text-decoration-color:
 
 .home-contact{font-family:Montserrat,Arial,sans-serif;font-size:.75rem;font-weight:650;min-height:44px;display:inline-flex;align-items:center;color:#fff}
 .home-contact:focus-visible{outline-color:var(--amber)}
+
+/* Unpublished homepage wording and booking-button draft. */
+.home-page .home-hero{padding-top:140px;padding-bottom:28px}
+.home-page .home-entrance{gap:32px}
+.home-page .home-hero-copy{max-width:1160px}
+.home-page .home-hero h1{font-size:clamp(2.6rem,5vw,4.5rem);line-height:1.08;max-width:1160px;margin-bottom:24px}
+.home-page .home-hero .lede{max-width:850px;font-size:1.18rem;line-height:1.65}
+.home-call-action{margin-top:28px}
+.home-call-button{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:60px;padding:17px 26px;background:#aa0033;color:#fff;border:1px solid #ffffff45;border-radius:4px;font-family:Montserrat,Arial,sans-serif;font-size:1rem;font-weight:750;line-height:1.5;box-shadow:0 8px 24px #0003;transition:background .18s,transform .18s}
+.home-call-button:hover{background:#8a0029;text-decoration:none;transform:translateY(-1px)}
+.home-call-button:focus-visible{outline:3px solid var(--amber);outline-offset:5px}
+.home-call-button span{font-size:1.4rem;line-height:1}
+.home-call-note{margin:13px 0 0;font-size:.9375rem;line-height:1.6;color:#ecf0f3;max-width:700px}
+.home-hero-meta{justify-content:flex-end}
+@media(max-width:780px){.home-page .home-hero{padding-top:124px}.home-page .home-entrance{gap:30px}.home-page .home-hero h1{font-size:clamp(2.5rem,6.5vw,3.6rem)}.home-page .home-hero .lede{font-size:1.0625rem}.home-call-button{font-size:.9375rem}}
+@media(max-width:600px){.home-page .home-hero{padding-top:115px}.home-page .home-hero h1{font-size:clamp(2.35rem,7.3vw,2.8rem);line-height:1.1}.home-call-button{width:100%;padding:16px 15px;gap:12px;min-height:60px}.home-call-note{font-size:.875rem;max-width:390px}.home-call-action{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.home-call-button:hover{transform:none}}
