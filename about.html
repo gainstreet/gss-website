@@ -121,11 +121,6 @@ p{font-size:17px;font-family:'Lora',Georgia,serif}
 .logo .gain{color:var(--amber)}
 .logo .street{color:var(--navy)}
 .logo .dot{color:var(--amber)}
-footer .logo .street{color:#fff}
-.footer-badge{
-  width:88px;height:88px;margin-bottom:16px;
-}
-.footer-badge img{width:100%;height:100%;display:block}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none;margin-left:auto;margin-right:32px}
 .nav-links a{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:var(--text);transition:.15s}
 .nav-links a:hover{color:var(--navy)}
@@ -146,14 +141,15 @@ footer .logo .street{color:#fff}
   transition:opacity .15s;
   z-index:60;
 }
-.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto}
 .nav-dropdown-menu li{padding:0}
 .nav-dropdown-menu a{
   display:block;padding:10px 14px;border-radius:6px;font-size:14px;font-weight:600;color:var(--text);
   border:none;box-shadow:none;outline:none;
 }
 .nav-dropdown-menu a:hover{background:var(--cream);color:var(--navy)}
-.nav-dropdown-menu a:focus{outline:none;box-shadow:none}
+.nav-dropdown-menu a:focus-visible{outline:2px solid var(--navy);outline-offset:-2px}
 .nav-dropdown-menu a.active{color:var(--navy);background:var(--cream)}
 
 /* ---- Mobile menu ---- */
@@ -184,7 +180,7 @@ footer .logo .street{color:#fff}
 .mobile-dropdown-trigger svg{width:14px;height:14px;transition:.2s;flex-shrink:0;color:var(--muted)}
 .mobile-dropdown.open .mobile-dropdown-trigger svg{transform:rotate(180deg)}
 .mobile-dropdown-menu{list-style:none;max-height:0;overflow:hidden;transition:max-height .25s ease}
-.mobile-dropdown.open .mobile-dropdown-menu{max-height:240px}
+.mobile-dropdown.open .mobile-dropdown-menu{max-height:320px}
 .mobile-dropdown-menu li{padding-left:12px}
 .mobile-dropdown-menu a{display:block;padding:12px 8px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:var(--text)}
 .mobile-dropdown-menu a.active{color:var(--navy)}
@@ -412,33 +408,6 @@ footer .logo .street{color:#fff}
 }
 .final-cta .phone-line a{color:#fff;font-weight:600;border-bottom:1px solid var(--amber)}
 
-/* ================ FOOTER ================ */
-footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px solid rgba(255,255,255,0.08)}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.footer-grid .logo{color:#fff;margin-bottom:16px}
-.footer-tagline{color:rgba(255,255,255,0.75);font-size:13px;line-height:1.6;max-width:280px}
-.footer-grid h5{
-  font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--amber);margin-bottom:16px;
-}
-.footer-grid ul{list-style:none}
-.footer-grid li{padding:6px 0;font-size:14px;color:rgba(255,255,255,0.8)}
-.footer-grid a:hover{color:var(--amber)}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;
-  display:flex;justify-content:space-between;
-  font-size:13px;color:rgba(255,255,255,0.6);
-}
-.footer-bottom a{margin-left:16px}
-.social-icons{display:flex;gap:10px;margin-top:18px}
-.social-icons a{
-  width:32px;height:32px;border-radius:50%;background:var(--amber);color:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:13px;font-family:'Montserrat',sans-serif;
-  transition:color .15s ease;
-}
-.social-icons a:hover{color:#fff}
-
 /* ================ SERVICES PAGE — BUCKETS ================ */
 .bucket{padding:80px 0;border-bottom:1px solid var(--line)}
 .bucket:nth-child(even){background:var(--cream)}
@@ -586,7 +555,7 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
   .nav-toggle{display:flex}
   .nav-cta{padding:11px 16px;font-size:13px}
   .problem-grid,.services-grid,.testimonial-grid,.bucket-services,.diff-grid,.results-grid,.work-grid{grid-template-columns:1fr}
-  .crm-grid,.bucket-head,.story-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;gap:32px}
+  .crm-grid,.bucket-head,.story-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
   .crm-spotlight,.testimonials,.story,.differentiators,.final-cta{padding:64px 0}
   .form-row.two-col{grid-template-columns:1fr}
 }
@@ -602,6 +571,7 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
   opacity:1;transform:translateY(0);
 }
 </style>
+<link rel="stylesheet" href="site-footer.css">
 </head>
 <body>
 
@@ -614,7 +584,8 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
         <li class="nav-dropdown">
           <a href="services.html" class="nav-dropdown-trigger">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
           <ul class="nav-dropdown-menu">
-            <li><a href="services.html">Branding &amp; Design</a></li>
+            <li><a href="services.html">Services Overview</a></li>
+            <li><a href="branding.html">Branding &amp; Design</a></li>
             <li><a href="websites.html">Websites</a></li>
             <li><a href="crm.html">CRM</a></li>
           </ul>
@@ -634,7 +605,8 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
         <li class="mobile-dropdown">
           <button type="button" class="mobile-dropdown-trigger">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <ul class="mobile-dropdown-menu">
-            <li><a href="services.html">Branding &amp; Design</a></li>
+            <li><a href="services.html">Services Overview</a></li>
+            <li><a href="branding.html">Branding &amp; Design</a></li>
             <li><a href="websites.html">Websites</a></li>
             <li><a href="crm.html">CRM</a></li>
           </ul>
@@ -748,8 +720,8 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
 
 </section>
 
-<footer>
-  <div class="container">
+<footer class="gss-footer" id="site-footer">
+  <div class="footer-container">
     <div class="footer-grid">
       <div>
         <div class="footer-badge"><img src="images/gss-logo-round-white.svg" alt="Gain Street Strategy"></div>
@@ -762,14 +734,13 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
           <li><a href="services.html">Services</a></li>
           <li><a href="results.html">Results</a></li>
           <li><a href="about.html">About</a></li>
-          
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
         <h5><a href="services.html">Services</a></h5>
         <ul>
-          <li><a href="services.html">Branding &amp; Design</a></li>
+          <li><a href="branding.html">Branding &amp; Design</a></li>
           <li><a href="websites.html">Websites</a></li>
           <li><a href="crm.html">CRM</a></li>
         </ul>
@@ -783,14 +754,14 @@ footer{background:var(--navy);color:#fff;padding:64px 0 32px;border-top:1px soli
         </ul>
         <div class="social-icons">
           <a href="https://www.facebook.com/gainstreetstrategy/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-          <a href="https://www.instagram.com/gain.street/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.instagram.com/gain.street/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           <a href="https://www.linkedin.com/company/gain-street-strategy/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div>© 2026 Gain Street Strategy</div>
-      <div><a href="https://www.gainstreet.ca/terms-of-service-and-privacy-agreement" target="_blank" rel="noopener">Privacy Policy</a><a href="https://www.gainstreet.ca/terms-of-service-and-privacy-agreement" target="_blank" rel="noopener">Terms of Service</a></div>
+      <div class="footer-legal"><a href="https://www.gainstreet.ca/terms-of-service-and-privacy-agreement" target="_blank" rel="noopener">Privacy Policy</a><a href="https://www.gainstreet.ca/terms-of-service-and-privacy-agreement" target="_blank" rel="noopener">Terms of Service</a></div>
     </div>
   </div>
 </footer>

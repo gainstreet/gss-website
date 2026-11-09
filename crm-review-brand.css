@@ -1,0 +1,53 @@
+
+/* Brand styles taken from the saved current website HTML. */
+:root{
+  --navy:    #1A3A5C;   /* primary dark */
+  --amber:   #FFB703;   /* accent (highlights, NOT buttons) */
+  --red:     #AA0033;   /* deep red — BUTTONS ONLY */
+  --red-dark:#8a0029;   /* button hover */
+  --cream:   #FAEEDA;   /* warm off-white accent bg */
+  --text:    #333333;
+  --muted:   #6B7280;
+  --line:    #E5E7EB;
+  --bg:      #FFFFFF;
+}
+.eyebrow{
+  display:inline-block;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--navy);background:var(--amber);
+  padding:6px 14px;border-radius:4px;margin-bottom:20px;
+}
+.eyebrow.on-dark{color:var(--navy);background:var(--amber)}
+.eyebrow.subtle{background:transparent;color:var(--muted);padding:0;margin-bottom:12px}
+
+body{font-family:'Lora',Georgia,serif;color:var(--text);background:var(--bg)}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:-.01em;line-height:1.1;color:var(--navy)}h1{font-weight:900;line-height:1.05}h3{font-weight:700}
+p{font-family:'Lora',Georgia,serif}
+.approval-bar{font-family:'Inter',sans-serif;background:var(--cream);color:var(--muted)}
+.hero-dark .hero-copy .lede{color:rgba(255,255,255,.85)}.hero-dark .hero-inclusion,.device-scene>.device-label{font-family:'Inter',sans-serif!important;color:rgba(255,255,255,.85)}
+.feature-heading>p,.workspace-lede,.section-intro,.feature-points p,.tools-grid p,.workspace-card-copy p,.workspace-next-heading>p{color:var(--text)}
+.engagement-expansion,.workspace-expansion{background:var(--cream)}.engagement-board,.workspace-card{background:var(--bg);border-color:var(--line)}
+.feature-points>div>span,.feature-category{font-family:'Inter',sans-serif;color:var(--navy)}
+.metric-note,.workspace-disclosure,.device-label,.workspace-current-note{font-family:'Inter',sans-serif!important;color:var(--muted)}
+.engagement-title,.engagement-title>span,.channel-numbers small,.mini-toolbar,.mini-toolbar>span{font-family:'Inter',sans-serif}
+.engagement-title>span,.channel-numbers small{color:var(--muted)}.channel-symbol{color:var(--amber);background:var(--navy)}
+.channel-cards>div,.feature-list li,.workspace-card ul{border-color:var(--line)}.feature-list li:before,.workspace-card li:before{color:var(--navy)}
+.development-badge{font-family:'Inter',sans-serif;background:var(--amber);border-color:var(--amber);color:var(--navy)}
+.workspace-current{background:var(--navy)}.workspace-current-heading .feature-category,.workspace-current-icon{color:var(--amber)}
+.workspace-current-heading p,.workspace-current-grid p,.workspace-current-note{color:rgba(255,255,255,.85)}
+.workspace-current-grid p,.workspace-next-heading>p{font-family:'Lora',Georgia,serif}.workspace-current-grid h3{color:#fff}
+.workspace-card li,.feature-list li{font-family:'Inter',sans-serif}.workspace-mini{background:var(--cream);border-color:var(--line);font-family:'Inter',sans-serif}
+.workspace-mini .mini-file{border-color:var(--line)}.mini-file>span{background:var(--cream);color:var(--navy)}.mini-file small,.mini-toolbar>span{color:var(--muted)}
+.markup-design,.postcard-sample>div:first-child{background:var(--navy)}.design-fake-cta{background:var(--red);color:#fff}.annotation-pin,.annotation-comment>span{background:var(--navy);color:#fff}
+.art-thanks{background:var(--cream);color:var(--navy)}.art-thanks:after{border-color:var(--amber)}.art-spotlight{background:var(--navy)}.art-tips{background:var(--cream);color:var(--navy);border-color:var(--amber)}
+.date-tile,.phone-task>span{background:var(--cream);color:var(--navy)}.scheduled-pill{background:var(--cream);color:var(--navy)}
+.screen-body,.planner-mini{background:var(--bg)}.screen-head,.planner-item{border-color:var(--line)}.screen-head,.screen-period,.screen-caption,.scope-note,.screen-metrics span,.planner-top>span,.planner-item small,.phone-brand,.phone-period,.phone-task small,.phone-demo,.phone-rate-label,.phone-stat>span,.floating-note>span,.floating-note small{color:var(--muted)}
+
+/* White backgrounds for the three workspace feature cards and their previews. */
+.workspace-feature-grid .workspace-card,.workspace-feature-grid .workspace-mini{background:#FFFFFF}
+
+/* White social media icons on the GSS blue background. */
+.channel-symbol{color:#FFFFFF;background:var(--navy)}
+
+/* Round amber social icon badges with white symbols. */
+.channel-symbol{width:36px;height:36px;border-radius:50%;background:var(--amber);color:#FFFFFF}.channel-symbol svg{width:19px;height:19px}
