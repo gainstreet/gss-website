@@ -1,0 +1,47 @@
+@font-face{
+  font-family:'GSS Footer Lora';src:url('home-lora.woff2?v=2') format('woff2');
+  font-style:normal;font-weight:400;font-display:swap;
+}
+@font-face{
+  font-family:'GSS Footer Montserrat';src:url('home-montserrat.woff2?v=2') format('woff2');
+  font-style:normal;font-weight:700 800;font-display:swap;
+}
+.gss-footer{
+  background:#1a3a5c;color:#fff;padding:64px 0 24px;
+  border-top:1px solid rgba(255,255,255,.08);
+  font:400 14px/1.55 'GSS Footer Lora',Georgia,serif;
+}
+.gss-footer .footer-container{max-width:1200px;margin:0 auto;padding:0 24px}
+.gss-footer .footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,minmax(0,1fr));gap:48px;margin-bottom:48px}
+.gss-footer .footer-badge{display:block;width:88px;height:88px;margin-bottom:16px}
+.gss-footer .footer-badge img{display:block;width:100%;height:100%}
+.gss-footer .footer-tagline{max-width:280px;margin:0;color:#fff;opacity:.75;font:inherit;font-size:13px;line-height:1.6}
+.gss-footer h5{
+  margin:0 0 16px;color:#ffb703;
+  font:700 13px/1.5 'GSS Footer Montserrat',Arial,sans-serif;
+  letter-spacing:.1em;text-transform:uppercase;
+}
+.gss-footer ul{list-style:none;margin:0;padding:0}
+.gss-footer li{padding:6px 0;color:rgba(255,255,255,.8);overflow-wrap:anywhere}
+.gss-footer a{color:inherit;text-decoration:none}
+.gss-footer a:hover{color:#ffb703;text-decoration:underline;text-underline-offset:3px}
+.gss-footer a:focus-visible{outline:2px solid #ffb703;outline-offset:4px}
+.gss-footer .social-icons{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.gss-footer .social-icons a{
+  display:flex;width:32px;height:32px;align-items:center;justify-content:center;
+  border-radius:50%;background:#ffb703;color:#1a3a5c;
+  font:800 13px/1 'GSS Footer Montserrat',Arial,sans-serif;
+}
+.gss-footer .social-icons a:hover{background:#fff;color:#1a3a5c;text-decoration:none}
+.gss-footer .footer-bottom{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;
+  border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.7);
+}
+.gss-footer .footer-legal{display:flex;flex-wrap:wrap;gap:8px 16px}
+@media(max-width:900px){
+  .gss-footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+}
+@media(max-width:480px){
+  .gss-footer{padding-top:44px}
+  .gss-footer .footer-grid{grid-template-columns:1fr;gap:26px;margin-bottom:32px}
+}
